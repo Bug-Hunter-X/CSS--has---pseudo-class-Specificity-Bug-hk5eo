@@ -1,0 +1,6 @@
+The following CSS code snippet demonstrates an uncommon bug related to unexpected behavior when using the `:has()` pseudo-class with a complex selector.  The intent is to style the `<li>` element only when its direct child `<a>` element contains the class `active`. However, due to the specificity of selectors, the styling might not apply as expected in some browsers or scenarios. 
+```css
+li:has(> a.active) {  
+  background-color: yellow;
+}
+```
