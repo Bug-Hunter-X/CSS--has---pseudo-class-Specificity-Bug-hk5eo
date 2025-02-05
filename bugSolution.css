@@ -1,0 +1,15 @@
+To solve this issue and improve specificity, we can add an extra class to the `<li>` elements that are to be styled and target them directly.
+```css
+li.active-item { 
+  background-color: yellow; 
+}
+```
+
+Alternatively, we can make the selector more specific by adding another criteria to the :has() selector, this method is suitable if you want to keep the styling logic close to original. 
+```css
+li:has(> a.active):not(:has(*.anotherClass)) {  
+  background-color: yellow;
+}
+```
+This approach ensures that the style only applies to `<li>` elements that have a direct child `<a>` with the `active` class and do not contain another child element that might affect selector specificity.
+Remember to adjust `.anotherClass` to a suitable class name that would differentiate between the elements you want to target.
